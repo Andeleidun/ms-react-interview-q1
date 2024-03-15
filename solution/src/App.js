@@ -38,6 +38,8 @@ function App() {
   }
 
   const add = () => {
+    // location validation not called for in requirements,
+    // would clarify if that is business intent for live system
     if (!error) {
       const newValues = [...values];
       newValues.push({name, location});
@@ -51,7 +53,11 @@ function App() {
     setError(checkError);
   }
 
-
+  /* general UI layout is rendered using MUI, based on react-grid2
+  / provides responsive layout, implemented here to provide more
+  / space to smaller items on smaller screens to keep as close to
+  / design as possible on larger screens while providing more touch room
+  */ 
   return (
     <div className="App">
       <Box sx={{ flexGrow: 1 }} component="form">
